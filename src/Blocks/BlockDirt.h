@@ -102,7 +102,7 @@ public:
 			// Grass does not spread to blocks with a light level less than 5
 			if ((light > 4)  && cBlockInfo::IsTransparent(above))
 			{
-				if (!cRoot::Get()->GetPluginManager()->CallHookBlockSpread(*Chunk->GetWorld(), Chunk->GetPosX() * cChunkDef::Width + BlockX, BlockY, Chunk->GetPosZ() * cChunkDef::Width + BlockZ, ssGrassSpread))
+				if (!cRoot::Get()->GetPluginManager().CallHookBlockSpread(*Chunk->GetWorld(), Chunk->GetPosX() * cChunkDef::Width + BlockX, BlockY, Chunk->GetPosZ() * cChunkDef::Width + BlockZ, ssGrassSpread))
 				{
 					Chunk->FastSetBlock(BlockX, BlockY, BlockZ, E_BLOCK_GRASS, 0);
 				}
