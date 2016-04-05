@@ -234,37 +234,11 @@ void cPlayer::Tick(std::chrono::milliseconds a_Dt, cChunk & a_Chunk)
 	TickFreezeCode();
 	if (m_IsFrozen)
 	{
-		m_FreezeCounter += 1;
-		if (!m_IsManuallyFrozen && a_Chunk.IsValid())
-		{
-			// If the player was automatically frozen, unfreeze if the chunk the player is inside is loaded
-			Unfreeze();
-		}
-		else
-		{
-			// If the player was externally / manually frozen (plugin, etc.) or if the chunk isn't loaded yet:
-			// 1. Set the location to m_FrozenPosition every tick.
-			// 2. Zero out the speed every tick.
-			// 3. Send location updates every 60 ticks.
-			SetPosition(m_FrozenPosition);
-			SetSpeed(0, 0, 0);
-			if (m_FreezeCounter % 60 == 0)
-			{
-				BroadcastMovementUpdate(ClientHandle.get());
-				ClientHandle->SendPlayerPosition();
-			}
-			return;
-		}
-	}
-
-	if (!a_Chunk.IsValid())
-	{
-		FreezeInternal(GetPosition(), false);
-		// This may happen if the cPlayer is created before the chunks have the chance of being loaded / generated (#83)
 		return;
 	}
-	ASSERT((GetParentChunk() != nullptr) && (GetParentChunk()->IsValid()));
 
+	ASSERT((GetParentChunk() != nullptr) && (GetParentChunk()->IsValid()));
+	ASSERT(a_Chunk.IsValid());
 
 	super::Tick(a_Dt, a_Chunk);
 
@@ -1509,7 +1483,7 @@ void cPlayer::Unfreeze()
 	m_IsFrozen = false;
 	DO_WITH_VALID_CLIENTHANDLE(
 		SendPlayerPosition();
-		BroadcastMovementUpdate(ClientHandle);
+		BroadcastMovementUpdate(ClientHandle.get());
 	)
 }
 

@@ -680,7 +680,7 @@ void cClientHandle::HandlePlayerPos(double a_PosX, double a_PosY, double a_PosZ,
 		return;
 	}
 
-	if (m_Player->IsFrozen())
+	if (Player->IsFrozen())
 	{
 		// Ignore client-side updates if the player is frozen
 		return;
@@ -1767,7 +1767,7 @@ void cClientHandle::RemoveFromWorld(void)
 		);
 		GetProtocol().SendUnloadChunk(Chunk.first.m_ChunkX, Chunk.first.m_ChunkZ);
 	}
-	m_HasSentPlayerChunk = false;
+
 	m_LoadedChunks.clear();
 }
 
@@ -1917,10 +1917,9 @@ void cClientHandle::Tick(float a_Dt)
 		return;
 	}
 
-
 	// Freeze the player if it is standing on a chunk not yet sent to the client
 	m_HasSentPlayerChunk = false;
-	if (m_Player->GetParentChunk() != nullptr)
+	if (Player->GetParentChunk() != nullptr)
 	{
 
 		// If the chunk is invalid, do not bother checking if it's sent to the client, it is definitely not
@@ -1944,9 +1943,6 @@ void cClientHandle::Tick(float a_Dt)
 				}
 			}
 		}
-		
-		// The player will freeze themselves if it is standing on a chunk not yet sent to the client
-		Player->TickFreezeCode(PlayerIsStandingAtASentChunk);
 	}
 
 	// Send a ping packet:
@@ -2187,7 +2183,7 @@ void cClientHandle::SendChunkData(cWorld & a_ChunkSenderWorld, const cChunkCoord
 				Result.first->second = std::ref(a_ChunkSenderWorld);
 				if (WasInPlayerChunk)
 				{
-					m_HasSentPlayerChunk = true;
+					ClientHandle->m_HasSentPlayerChunk = true;
 				}
 			}
 		}

@@ -506,6 +506,9 @@ private:
 	/** Contains the UUID used by Mojang to identify the player's account. Short UUID stored here (without dashes) */
 	AString m_UUID;
 
+	/** Set to true when the chunk where the player is is sent to the client. Used for spawning the player */
+	bool m_HasSentPlayerChunk;
+
 	/** Client Settings */
 	AString m_Locale;
 
