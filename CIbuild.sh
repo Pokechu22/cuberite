@@ -11,7 +11,6 @@ if [ "$CXX" == "g++" ]; then
 	# Travis Docker containers don't allow sudo, which update-alternatives needs, and it seems no alternative to this command is provided, hence:
 	export CXX="/usr/bin/g++-4.8"
 fi
-
 cmake . -DBUILD_TOOLS=1 -DSELF_TEST=1;
 
 echo "Building..."
