@@ -56,13 +56,3 @@ bool cBlaze::Attack(std::chrono::milliseconds a_Dt)
 	}
 	return false;
 }
-
-
-
-
-
-void cBlaze::WriteMetadata(cMetadataWriter & a_Writer) const
-{
-	super::WriteMetadata(a_Writer);
-	a_Writer.SkipMeta();  // Is on fire / preparing to shoot
-}

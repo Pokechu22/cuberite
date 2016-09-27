@@ -244,13 +244,3 @@ void cPassiveMonster::OnRightClicked(cPlayer & a_Player)
 
 
 
-
-
-void cPassiveMonster::WriteMetadata(cMetadataWriter & a_Writer) const
-{
-	super::WriteMetadata(a_Writer);
-	a_Writer.WriteBool(IsBaby());  // Is baby
-}
-
-
-

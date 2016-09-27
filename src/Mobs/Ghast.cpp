@@ -58,13 +58,3 @@ bool cGhast::Attack(std::chrono::milliseconds a_Dt)
 
 
 
-
-
-void cGhast::WriteMetadata(cMetadataWriter & a_Writer) const
-{
-	super::WriteMetadata(a_Writer);
-	a_Writer.WriteBool(IsCharging());  // Is shooting
-}
-
-
-
