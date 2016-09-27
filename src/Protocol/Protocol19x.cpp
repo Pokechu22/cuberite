@@ -3481,7 +3481,166 @@ void cProtocol190::WriteBlockEntity(cPacketizer & a_Pkt, const cBlockEntity & a_
 void cProtocol190::WriteEntityMetadata(cPacketizer & a_Pkt, const cEntity & a_Entity)
 {
 	cMetadataWriter190 Writer(m_ProtocolVersion, a_Pkt, *this);
-	a_Entity.WriteMetadata(Writer);
+	if (a_Entity.IsA("cZombiePigman"))
+	{
+		WriteMetadata(Writer, static_cast<const cZombiePigman &>(a_Entity));
+	}
+	else if (a_Entity.IsA("cZombie"))
+	{
+		WriteMetadata(Writer, static_cast<const cZombie &>(a_Entity));
+	}
+	else if (a_Entity.IsA("cWither"))
+	{
+		WriteMetadata(Writer, static_cast<const cWither &>(a_Entity));
+	}
+	else if (a_Entity.IsA("cWitch"))
+	{
+		WriteMetadata(Writer, static_cast<const cWitch &>(a_Entity));
+	}
+	else if (a_Entity.IsA("cSpider"))
+	{
+		WriteMetadata(Writer, static_cast<const cSpider &>(a_Entity));
+	}
+	else if (a_Entity.IsA("cSlime"))
+	{
+		WriteMetadata(Writer, static_cast<const cSlime &>(a_Entity));
+	}
+	else if (a_Entity.IsA("cSkeleton"))
+	{
+		WriteMetadata(Writer, static_cast<const cSkeleton &>(a_Entity));
+	}
+	else if (a_Entity.IsA("cMagmaCube"))
+	{
+		WriteMetadata(Writer, static_cast<const cMagmaCube &>(a_Entity));
+	}
+	else if (a_Entity.IsA("cGuardian"))
+	{
+		WriteMetadata(Writer, static_cast<const cGuardian &>(a_Entity));
+	}
+	else if (a_Entity.IsA("cGhast"))
+	{
+		WriteMetadata(Writer, static_cast<const cGhast &>(a_Entity));
+	}
+	else if (a_Entity.IsA("cEnderman"))
+	{
+		WriteMetadata(Writer, static_cast<const cEnderman &>(a_Entity));
+	}
+	else if (a_Entity.IsA("cEnderDragon"))
+	{
+		WriteMetadata(Writer, static_cast<const cEnderDragon &>(a_Entity));
+	}
+	else if (a_Entity.IsA("cCreeper"))
+	{
+		WriteMetadata(Writer, static_cast<const cCreeper &>(a_Entity));
+	}
+	else if (a_Entity.IsA("cBlaze"))
+	{
+		WriteMetadata(Writer, static_cast<const cBlaze &>(a_Entity));
+	}
+	else if (a_Entity.IsA("cSnowGolem"))
+	{
+		WriteMetadata(Writer, static_cast<const cSnowGolem &>(a_Entity));
+	}
+	else if (a_Entity.IsA("cIronGolem"))
+	{
+		WriteMetadata(Writer, static_cast<const cIronGolem &>(a_Entity));
+	}
+	else if (a_Entity.IsA("cVillager"))
+	{
+		WriteMetadata(Writer, static_cast<const cVillager &>(a_Entity));
+	}
+	else if (a_Entity.IsA("cWolf"))
+	{
+		WriteMetadata(Writer, static_cast<const cWolf &>(a_Entity));
+	}
+	else if (a_Entity.IsA("cSheep"))
+	{
+		WriteMetadata(Writer, static_cast<const cSheep &>(a_Entity));
+	}
+	else if (a_Entity.IsA("cRabbit"))
+	{
+		WriteMetadata(Writer, static_cast<const cRabbit &>(a_Entity));
+	}
+	else if (a_Entity.IsA("cPig"))
+	{
+		WriteMetadata(Writer, static_cast<const cPig &>(a_Entity));
+	}
+	else if (a_Entity.IsA("cHorse"))
+	{
+		WriteMetadata(Writer, static_cast<const cHorse &>(a_Entity));
+	}
+	else if (a_Entity.IsA("cBat"))
+	{
+		WriteMetadata(Writer, static_cast<const cBat &>(a_Entity));
+	}
+	else if (a_Entity.IsA("cPassiveMonster"))
+	{
+		WriteMetadata(Writer, static_cast<const cPassiveMonster &>(a_Entity));
+	}
+	else if (a_Entity.IsA("cWitherSkullEntity"))
+	{
+		WriteMetadata(Writer, static_cast<const cWitherSkullEntity &>(a_Entity));
+	}
+	else if (a_Entity.IsA("cSplashPotionEntity"))
+	{
+		WriteMetadata(Writer, static_cast<const cSplashPotionEntity &>(a_Entity));
+	}
+	else if (a_Entity.IsA("cFireworkEntity"))
+	{
+		WriteMetadata(Writer, static_cast<const cFireworkEntity &>(a_Entity));
+	}
+	else if (a_Entity.IsA("cArrowEntity"))
+	{
+		WriteMetadata(Writer, static_cast<const cArrowEntity &>(a_Entity));
+	}
+	else if (a_Entity.IsA("cTNTEntity"))
+	{
+		WriteMetadata(Writer, static_cast<const cTNTEntity &>(a_Entity));
+	}
+	else if (a_Entity.IsA("cPlayer"))
+	{
+		WriteMetadata(Writer, static_cast<const cPlayer &>(a_Entity));
+	}
+	else if (a_Entity.IsA("cPickup"))
+	{
+		WriteMetadata(Writer, static_cast<const cPickup &>(a_Entity));
+	}
+	else if (a_Entity.IsA("cPawn"))
+	{
+		WriteMetadata(Writer, static_cast<const cPawn &>(a_Entity));
+	}
+	else if (a_Entity.IsA("cMinecartWithFurnace"))
+	{
+		WriteMetadata(Writer, static_cast<const cMinecartWithFurnace &>(a_Entity));
+	}
+	else if (a_Entity.IsA("cMinecart"))
+	{
+		WriteMetadata(Writer, static_cast<const cMinecart &>(a_Entity));
+	}
+	else if (a_Entity.IsA("cItemFrame"))
+	{
+		WriteMetadata(Writer, static_cast<const cItemFrame &>(a_Entity));
+	}
+	else if (a_Entity.IsA("cFloater"))
+	{
+		WriteMetadata(Writer, static_cast<const cFloater &>(a_Entity));
+	}
+	else if (a_Entity.IsA("cFallingBlock"))
+	{
+		WriteMetadata(Writer, static_cast<const cFallingBlock &>(a_Entity));
+	}
+	else if (a_Entity.IsA("cEnderCrystal"))
+	{
+		WriteMetadata(Writer, static_cast<const cEnderCrystal &>(a_Entity));
+	}
+	else if (a_Entity.IsA("cBoat"))
+	{
+		WriteMetadata(Writer, static_cast<const cBoat &>(a_Entity));
+	}
+	else if (a_Entity.IsA("cEntity"))
+	{
+		WriteMetadata(Writer, static_cast<const cEntity &>(a_Entity));
+	}
 }
 
 
@@ -3502,6 +3661,584 @@ void cProtocol190::WriteEntityProperties(cPacketizer & a_Pkt, const cEntity & a_
 	// TODO: Send properties and modifiers based on the mob type
 
 	a_Pkt.WriteBEInt32(0);  // NumProperties
+}
+
+
+
+
+
+void cProtocol190::WriteMetadata(cMetadataWriter & a_Writer, const cArrowEntity & a_ArrowEntity)
+{
+	WriteMetadata(a_Writer, static_cast<const cProjectileEntity &>(a_ArrowEntity));
+	a_Writer.WriteByte(a_ArrowEntity.IsCritical() ? 1 : 0);  // Flags
+}
+
+
+
+
+
+void cProtocol190::WriteMetadata(cMetadataWriter & a_Writer, const cBoat & a_Boat)
+{
+	WriteMetadata(a_Writer, static_cast<const cEntity &>(a_Boat));
+	a_Writer.WriteInt(a_Boat.GetLastDamage());  // Time since last hit
+	a_Writer.WriteInt(a_Boat.GetForwardDirection());  // Forward direction
+	a_Writer.WriteFloat(a_Boat.GetDamageTaken());  // Damage taken
+	a_Writer.WriteInt(a_Boat.GetType());  // Type
+	a_Writer.WriteBool(a_Boat.IsRightPaddleUsed());  // Right paddle
+	a_Writer.WriteBool(a_Boat.IsLeftPaddleUsed());  // Left paddle
+}
+
+
+
+
+
+void cProtocol190::WriteMetadata(cMetadataWriter & a_Writer, const cEnderCrystal & a_EnderCrystal)
+{
+	WriteMetadata(a_Writer, static_cast<const cEntity &>(a_EnderCrystal));
+	a_Writer.SkipMeta();  // Beam target
+	a_Writer.SkipMeta();  // Show bottom
+}
+
+
+
+
+
+void cProtocol190::WriteMetadata(cMetadataWriter & a_Writer, const cEntity & a_Entity)
+{
+	Int8 Flags = 0;
+	if (a_Entity.IsOnFire())
+	{
+		Flags |= 0x01;
+	}
+	if (a_Entity.IsCrouched())
+	{
+		Flags |= 0x02;
+	}
+	if (a_Entity.IsSprinting())
+	{
+		Flags |= 0x08;
+	}
+	if (a_Entity.IsRclking())
+	{
+		Flags |= 0x10;
+	}
+	if (a_Entity.IsInvisible())
+	{
+		Flags |= 0x20;
+	}
+	a_Writer.WriteByte(Flags);  // Flags
+	a_Writer.SkipMeta();  // Air
+	if (a_Entity.HasCustomName())
+	{
+		a_Writer.WriteString(a_Entity.GetCustomName());  // Custom name
+		a_Writer.WriteBool(a_Entity.IsCustomNameAlwaysVisible());  // Custom name visible
+	}
+	else
+	{
+		a_Writer.SkipMeta();  // Custom name
+		a_Writer.SkipMeta();  // Custom name visible
+	}
+	a_Writer.SkipMeta();  // Is silent
+	if (a_Writer.m_ProtocolVersion >= PROTO_VERSION_1_10_0)
+	{
+		a_Writer.SkipMeta();  // No gravity
+	}
+	// Subclasses add aditional metadata fields
+}
+
+
+
+
+
+void cProtocol190::WriteMetadata(cMetadataWriter & a_Writer, const cFallingBlock & a_FallingBlock)
+{
+	WriteMetadata(a_Writer, static_cast<const cEntity &>(a_FallingBlock));
+	// a_Writer.WritePosition(a_FallingBlock.m_OriginalPosition.x, a_FallingBlock.m_OriginalPosition.y, a_FallingBlock.m_OriginalPosition.z);  // Spawn position
+	a_Writer.SkipMeta();  // Original position
+}
+
+
+
+
+
+void cProtocol190::WriteMetadata(cMetadataWriter & a_Writer, const cFireworkEntity & a_FireworkEntity)
+{
+	WriteMetadata(a_Writer, static_cast<const cProjectileEntity &>(a_FireworkEntity));
+	a_Writer.WriteItem(a_FireworkEntity.GetItem());  // Firework item
+}
+
+
+
+
+
+void cProtocol190::WriteMetadata(cMetadataWriter & a_Writer, const cFloater & a_Floater)
+{
+	WriteMetadata(a_Writer, static_cast<const cEntity &>(a_Floater));
+	// Hooked entity ID
+	// 0 if none, ID + 1 if attached
+	if (a_Floater.GetAttachedMobID() == cEntity::INVALID_ID)
+	{
+		a_Writer.WriteInt(0);  // No attached entity
+	}
+	else
+	{
+		a_Writer.WriteInt(static_cast<Int32>(a_Floater.GetAttachedMobID() + 1));  // Attached entity ID
+	}
+}
+
+
+
+
+
+void cProtocol190::WriteMetadata(cMetadataWriter & a_Writer, const cItemFrame & a_ItemFrame)
+{
+	WriteMetadata(a_Writer, static_cast<const cEntity &>(a_ItemFrame));
+	a_Writer.WriteItem(a_ItemFrame.GetItem());  // Item in frame
+	a_Writer.WriteInt(a_ItemFrame.GetItemRotation());  // Item rotation
+}
+
+
+
+
+
+void cProtocol190::WriteMetadata(cMetadataWriter & a_Writer, const cMinecart & a_Minecart)
+{
+	WriteMetadata(a_Writer, static_cast<const cEntity &>(a_Minecart));
+	// The following expression makes Minecarts shake more with less health or higher damage taken
+	a_Writer.WriteInt((a_Minecart.GetMaxHealth() - a_Minecart.GetHealth()) * a_Minecart.LastDamage() * 4);
+	a_Writer.WriteInt(1);  // Shaking direction
+	a_Writer.WriteFloat(static_cast<float>(a_Minecart.LastDamage() + 10));  // Shaking multiplier
+
+	// TODO: Move these flags to cMinecart, since they are on all minecarts (#3343)
+	if (a_Minecart.GetPayload() == cMinecart::mpNone)
+	{
+		auto RideableMinecart = static_cast<const cRideableMinecart *>(&a_Minecart);
+		const cItem & MinecartContent = RideableMinecart->GetContent();
+		if (!MinecartContent.IsEmpty())
+		{
+			int Content = MinecartContent.m_ItemType;
+			Content |= MinecartContent.m_ItemDamage << 8;
+			a_Writer.WriteInt(Content);  // Block ID and damage
+			a_Writer.WriteInt(RideableMinecart->GetBlockHeight());  // Block height
+			a_Writer.WriteBool(true);  // Show block
+		}
+		else
+		{
+			a_Writer.SkipMeta();  // Block ID and damage
+			a_Writer.SkipMeta();  // Block height
+			a_Writer.SkipMeta();  // Show block
+		}
+	}
+	else
+	{
+		a_Writer.SkipMeta();  // Block ID and damage
+		a_Writer.SkipMeta();  // Block height
+		a_Writer.SkipMeta();  // Show block
+	}
+}
+
+
+
+
+
+void cProtocol190::WriteMetadata(cMetadataWriter & a_Writer, const cMinecartWithFurnace & a_MinecartWithFurnace)
+{
+	WriteMetadata(a_Writer, static_cast<const cMinecart &>(a_MinecartWithFurnace));
+	a_Writer.WriteBool(a_MinecartWithFurnace.IsFueled());  // Is powered
+}
+
+
+
+
+
+void cProtocol190::WriteMetadata(cMetadataWriter & a_Writer, const cPawn & a_Pawn)
+{
+	WriteMetadata(a_Writer, static_cast<const cEntity &>(a_Pawn));
+	// Living flags
+	a_Writer.SkipMeta();  // Hand flags
+	a_Writer.WriteFloat(static_cast<float>(a_Pawn.GetHealth()));  // Health
+	a_Writer.SkipMeta();  // Potion effect color
+	a_Writer.SkipMeta();  // Potion effect ambient
+	a_Writer.SkipMeta();  // Number of arrows
+	// Insentient flags
+	a_Writer.SkipMeta();  // NoAI, left-handed
+}
+
+
+
+
+
+void cProtocol190::WriteMetadata(cMetadataWriter & a_Writer, const cPickup & a_Pickup)
+{
+	WriteMetadata(a_Writer, static_cast<const cEntity &>(a_Pickup));
+	a_Writer.WriteItem(a_Pickup.GetItem());  // Item
+}
+
+
+
+
+
+void cProtocol190::WriteMetadata(cMetadataWriter & a_Writer, const cPlayer & a_Player)
+{
+	WriteMetadata(a_Writer, static_cast<const cPawn &>(a_Player));
+	// Player-specific fields (none currently implemented)
+	a_Writer.SkipMeta();  // Aditional hearts
+	a_Writer.SkipMeta();  // Score
+	a_Writer.SkipMeta();  // Skin flags
+	a_Writer.SkipMeta();  // Main hand
+}
+
+
+
+
+
+void cProtocol190::WriteMetadata(cMetadataWriter & a_Writer, const cSplashPotionEntity & a_SplashPotionEntity)
+{
+	WriteMetadata(a_Writer, static_cast<const cProjectileEntity &>(a_SplashPotionEntity));
+	a_Writer.WriteItem(a_SplashPotionEntity.GetItem());  // Potion item
+}
+
+
+
+
+
+void cProtocol190::WriteMetadata(cMetadataWriter & a_Writer, const cTNTEntity & a_TNTEntity)
+{
+	WriteMetadata(a_Writer, static_cast<const cEntity &>(a_TNTEntity));
+	a_Writer.WriteInt(a_TNTEntity.GetFuseTicks());  // Fuse time
+}
+
+
+
+
+
+void cProtocol190::WriteMetadata(cMetadataWriter & a_Writer, const cWitherSkullEntity & a_WitherSkullEntity)
+{
+	WriteMetadata(a_Writer, static_cast<const cProjectileEntity &>(a_WitherSkullEntity));
+	a_Writer.SkipMeta();  // Invulnerable / blue
+}
+
+
+
+
+
+void cProtocol190::WriteMetadata(cMetadataWriter & a_Writer, const cBat & a_Bat)
+{
+	// super isn't used here because that refers to cPassiveMonster, which contains the is baby flag.
+	// Since bat doesn't extend Ageable but does extend insentient, we need to skip the ageable metadata.
+	// This is an odd special case that is caused by the differences between vanilla's entity hierarchy and
+	// Cuberite's entity hierarchy.
+	WriteMetadata(a_Writer, static_cast<const cMonster &>(a_Bat));
+	a_Writer.WriteByte(a_Bat.IsHanging() ? 1 : 0);  // Flags
+}
+
+
+
+
+
+void cProtocol190::WriteMetadata(cMetadataWriter & a_Writer, const cBlaze & a_Blaze)
+{
+	WriteMetadata(a_Writer, static_cast<const cAggressiveMonster &>(a_Blaze));
+	a_Writer.SkipMeta();  // Is on fire / preparing to shoot
+}
+
+
+
+
+
+void cProtocol190::WriteMetadata(cMetadataWriter & a_Writer, const cCreeper & a_Creeper)
+{
+	WriteMetadata(a_Writer, static_cast<const cAggressiveMonster &>(a_Creeper));
+	a_Writer.WriteInt(a_Creeper.IsBlowing() ? 1 : -1);  // State
+	a_Writer.WriteBool(a_Creeper.IsCharged());  // Is charged
+	a_Writer.WriteBool(a_Creeper.IsBurnedWithFlintAndSteel());  // Is burned with flint and steel
+}
+
+
+
+
+
+void cProtocol190::WriteMetadata(cMetadataWriter & a_Writer, const cEnderDragon & a_EnderDragon)
+{
+	WriteMetadata(a_Writer, static_cast<const cAggressiveMonster &>(a_EnderDragon));
+	a_Writer.SkipMeta();  // 1.9 battle phase
+}
+
+
+
+
+
+void cProtocol190::WriteMetadata(cMetadataWriter & a_Writer, const cEnderman & a_Enderman)
+{
+	WriteMetadata(a_Writer, static_cast<const cPassiveAggressiveMonster &>(a_Enderman));
+	a_Writer.WriteBlockType(a_Enderman.GetCarriedBlock(), a_Enderman.GetCarriedMeta());  // Carried block
+	a_Writer.WriteBool(a_Enderman.IsScreaming());  // Is screaming
+}
+
+
+
+
+
+void cProtocol190::WriteMetadata(cMetadataWriter & a_Writer, const cGhast & a_Ghast)
+{
+	WriteMetadata(a_Writer, static_cast<const cAggressiveMonster &>(a_Ghast));
+	a_Writer.WriteBool(a_Ghast.IsCharging());  // Is shooting
+}
+
+
+
+
+
+void cProtocol190::WriteMetadata(cMetadataWriter & a_Writer, const cGuardian & a_Guardian)
+{
+	WriteMetadata(a_Writer, static_cast<const cAggressiveMonster &>(a_Guardian));
+	a_Writer.SkipMeta();  // Flags
+	a_Writer.SkipMeta();  // Target
+}
+
+
+
+
+
+void cProtocol190::WriteMetadata(cMetadataWriter & a_Writer, const cHorse & a_Horse)
+{
+	WriteMetadata(a_Writer, static_cast<const cPassiveMonster &>(a_Horse));
+	Int8 Flags = 0;
+	if (a_Horse.IsTame())
+	{
+		Flags |= 0x02;
+	}
+	if (a_Horse.IsSaddled())
+	{
+		Flags |= 0x04;
+	}
+	if (a_Horse.IsChested())
+	{
+		Flags |= 0x08;
+	}
+	if (a_Horse.IsEating())
+	{
+		Flags |= 0x20;
+	}
+	if (a_Horse.IsRearing())
+	{
+		Flags |= 0x40;
+	}
+	if (a_Horse.IsMthOpen())
+	{
+		Flags |= 0x80;
+	}
+	a_Writer.WriteByte(Flags);  // Flags
+	a_Writer.WriteInt(a_Horse.GetHorseType());  // Type
+	int Appearance = 0;
+	Appearance |= a_Horse.GetHorseColor();
+	Appearance |= a_Horse.GetHorseStyle() << 8;
+	a_Writer.WriteInt(Appearance);  // Appearence
+	a_Writer.SkipMeta();  // Owner
+	a_Writer.WriteInt(a_Horse.GetHorseArmour());  // Armor
+}
+
+
+
+
+
+void cProtocol190::WriteMetadata(cMetadataWriter & a_Writer, const cIronGolem & a_IronGolem)
+{
+	WriteMetadata(a_Writer, static_cast<const cPassiveAggressiveMonster &>(a_IronGolem));
+	a_Writer.SkipMeta();  // Is player created
+}
+
+
+
+
+
+void cProtocol190::WriteMetadata(cMetadataWriter & a_Writer, const cMagmaCube & a_MagmaCube)
+{
+	WriteMetadata(a_Writer, static_cast<const cAggressiveMonster &>(a_MagmaCube));
+	// Note: This is slime metadata
+	a_Writer.WriteInt(a_MagmaCube.GetSize());  // Size
+}
+
+
+
+
+
+void cProtocol190::WriteMetadata(cMetadataWriter & a_Writer, const cPassiveMonster & a_PassiveMonster)
+{
+	WriteMetadata(a_Writer, static_cast<const cMonster &>(a_PassiveMonster));
+	a_Writer.WriteBool(a_PassiveMonster.IsBaby());  // Is baby
+}
+
+
+
+
+
+void cProtocol190::WriteMetadata(cMetadataWriter & a_Writer, const cPig & a_Pig)
+{
+	WriteMetadata(a_Writer, static_cast<const cPassiveMonster &>(a_Pig));
+	a_Writer.WriteBool(a_Pig.IsSaddled());  // Has saddle
+}
+
+
+
+
+
+void cProtocol190::WriteMetadata(cMetadataWriter & a_Writer, const cRabbit & a_Rabbit)
+{
+	WriteMetadata(a_Writer, static_cast<const cPassiveMonster &>(a_Rabbit));
+	a_Writer.WriteInt(static_cast<Int32>(a_Rabbit.GetRabbitType()));  // Rabit type
+}
+
+
+
+
+
+void cProtocol190::WriteMetadata(cMetadataWriter & a_Writer, const cSheep & a_Sheep)
+{
+	WriteMetadata(a_Writer, static_cast<const cPassiveMonster &>(a_Sheep));
+	Int8 SheepMetadata = 0;
+	SheepMetadata = static_cast<Int8>(a_Sheep.GetFurColor());
+	if (a_Sheep.IsSheared())
+	{
+		SheepMetadata |= 0x10;
+	}
+	a_Writer.WriteByte(SheepMetadata);  // Sheep flags (wool & sheered)
+}
+
+
+
+
+
+void cProtocol190::WriteMetadata(cMetadataWriter & a_Writer, const cSkeleton & a_Skeleton)
+{
+	WriteMetadata(a_Writer, static_cast<const cAggressiveMonster &>(a_Skeleton));
+	a_Writer.WriteInt(a_Skeleton.IsWither() ? 1 : 0);  // Type (TODO: Stray)
+	a_Writer.SkipMeta();  // Is swinging arms
+}
+
+
+
+
+
+void cProtocol190::WriteMetadata(cMetadataWriter & a_Writer, const cSlime & a_Slime)
+{
+	WriteMetadata(a_Writer, static_cast<const cAggressiveMonster &>(a_Slime));
+	a_Writer.WriteInt(a_Slime.GetSize());  // Size
+}
+
+
+
+
+
+void cProtocol190::WriteMetadata(cMetadataWriter & a_Writer, const cSnowGolem & a_SnowGolem)
+{
+	WriteMetadata(a_Writer, static_cast<const cPassiveAggressiveMonster &>(a_SnowGolem));
+	a_Writer.SkipMeta();  // Is pumpkin removed
+}
+
+
+
+
+
+void cProtocol190::WriteMetadata(cMetadataWriter & a_Writer, const cSpider & a_Spider)
+{
+	WriteMetadata(a_Writer, static_cast<const cAggressiveMonster &>(a_Spider));
+	a_Writer.SkipMeta();  // Is climbing
+}
+
+
+
+
+
+void cProtocol190::WriteMetadata(cMetadataWriter & a_Writer, const cVillager & a_Villager)
+{
+	WriteMetadata(a_Writer, static_cast<const cPassiveMonster &>(a_Villager));
+	a_Writer.WriteInt(a_Villager.GetVilType());  // Villager profession
+}
+
+
+
+
+
+void cProtocol190::WriteMetadata(cMetadataWriter & a_Writer, const cWitch & a_Witch)
+{
+	WriteMetadata(a_Writer, static_cast<const cAggressiveMonster &>(a_Witch));
+	a_Writer.WriteBool(a_Witch.IsAngry());  // Is aggressive
+}
+
+
+
+
+
+void cProtocol190::WriteMetadata(cMetadataWriter & a_Writer, const cWither & a_Wither)
+{
+	WriteMetadata(a_Writer, static_cast<const cAggressiveMonster &>(a_Wither));
+	a_Writer.SkipMeta();  // Center head target
+	a_Writer.SkipMeta();  // Left head target
+	a_Writer.SkipMeta();  // Right head target
+	a_Writer.WriteInt(static_cast<Int32>(a_Wither.GetWitherInvulnerableTicks()));
+}
+
+
+
+
+
+void cProtocol190::WriteMetadata(cMetadataWriter & a_Writer, const cWolf & a_Wolf)
+{
+	WriteMetadata(a_Writer, static_cast<const cPassiveAggressiveMonster &>(a_Wolf));
+
+	// Ageable fields (since wolf inherits cPassiveAgressiveMonster instead of cPassiveMonster, this isn't handled directly)
+	a_Writer.WriteBool(a_Wolf.IsBaby());
+
+	// Tameable fields
+	Int8 WolfStatus = 0;
+	if (a_Wolf.IsSitting())
+	{
+		WolfStatus |= 0x1;
+	}
+	if (a_Wolf.IsAngry())
+	{
+		WolfStatus |= 0x2;
+	}
+	if (a_Wolf.IsTame())
+	{
+		WolfStatus |= 0x4;
+	}
+	a_Writer.WriteByte(WolfStatus);  // Status
+	a_Writer.SkipMeta();  // Owner
+
+	// Wolf flags
+	a_Writer.WriteFloat(static_cast<float>(a_Wolf.GetHealth()));  // Damage taken / tail rotation
+	a_Writer.WriteBool(a_Wolf.IsBegging());  // Is begging
+	a_Writer.WriteInt(a_Wolf.GetCollarColor());  // Collar color
+}
+
+
+
+
+
+void cProtocol190::WriteMetadata(cMetadataWriter & a_Writer, const cZombie & a_Zombie)
+{
+	WriteMetadata(a_Writer, static_cast<const cAggressiveMonster &>(a_Zombie));
+	a_Writer.WriteBool(a_Zombie.IsBaby());  // Is baby
+	// TODO: This actually encodes the zombie villager profession, but that isn't implemented yet.
+	a_Writer.WriteInt(a_Zombie.IsVillagerZombie() ? 1 : 0);  // Profession
+	a_Writer.WriteBool(a_Zombie.IsConverting());  // Is converting
+	a_Writer.SkipMeta();  // Are hands held up
+}
+
+
+
+
+
+void cProtocol190::WriteMetadata(cMetadataWriter & a_Writer, const cZombiePigman & a_ZombiePigman)
+{
+	WriteMetadata(a_Writer, static_cast<const cAggressiveMonster &>(a_ZombiePigman));
+	a_Writer.WriteBool(a_ZombiePigman.IsBaby());  // Is baby
+	// Note: Zombie pigmen inherit zombie metadata
+	a_Writer.SkipMeta();  // Zombie type / profession
+	a_Writer.SkipMeta();  // Is converting
+	a_Writer.SkipMeta();  // Are hands up
 }
 
 

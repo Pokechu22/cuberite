@@ -23,6 +23,33 @@ Declares the 1.9.x protocol classes:
 #include "Protocol.h"
 #include "../ByteBuffer.h"
 #include "../MetadataWriter.h"
+#include "../Entities/ArrowEntity.h"
+#include "../Entities/Boat.h"
+#include "../Entities/EnderCrystal.h"
+#include "../Entities/Entity.h"
+#include "../Entities/EntityEffect.h"
+#include "../Entities/ExpBottleEntity.h"
+#include "../Entities/ExpOrb.h"
+#include "../Entities/FallingBlock.h"
+#include "../Entities/FireChargeEntity.h"
+#include "../Entities/FireworkEntity.h"
+#include "../Entities/Floater.h"
+#include "../Entities/GhastFireballEntity.h"
+#include "../Entities/HangingEntity.h"
+#include "../Entities/ItemFrame.h"
+#include "../Entities/Minecart.h"
+#include "../Entities/Painting.h"
+#include "../Entities/Pawn.h"
+#include "../Entities/Pickup.h"
+#include "../Entities/Player.h"
+#include "../Entities/ProjectileEntity.h"
+#include "../Entities/SplashPotionEntity.h"
+#include "../Entities/ThrownEggEntity.h"
+#include "../Entities/ThrownEnderPearlEntity.h"
+#include "../Entities/ThrownSnowballEntity.h"
+#include "../Entities/TNTEntity.h"
+#include "../Entities/WitherSkullEntity.h"
+#include "../Mobs/IncludeAllMonsters.h"
 
 #ifdef _MSC_VER
 	#pragma warning(push)
@@ -268,6 +295,47 @@ protected:
 
 	/** Writes the block entity data for the specified block entity into the packet. */
 	void WriteBlockEntity(cPacketizer & a_Pkt, const cBlockEntity & a_BlockEntity);
+
+	virtual void WriteMetadata(cMetadataWriter & a_Writer, const cArrowEntity & a_ArrowEntity);
+	virtual void WriteMetadata(cMetadataWriter & a_Writer, const cBoat & a_Boat);
+	virtual void WriteMetadata(cMetadataWriter & a_Writer, const cEnderCrystal & a_EnderCrystal);
+	virtual void WriteMetadata(cMetadataWriter & a_Writer, const cEntity & a_Entity);
+	virtual void WriteMetadata(cMetadataWriter & a_Writer, const cFallingBlock & a_FallingBlock);
+	virtual void WriteMetadata(cMetadataWriter & a_Writer, const cFireworkEntity & a_FireworkEntity);
+	virtual void WriteMetadata(cMetadataWriter & a_Writer, const cFloater & a_Floater);
+	virtual void WriteMetadata(cMetadataWriter & a_Writer, const cItemFrame & a_ItemFrame);
+	virtual void WriteMetadata(cMetadataWriter & a_Writer, const cMinecart & a_Minecart);
+	virtual void WriteMetadata(cMetadataWriter & a_Writer, const cMinecartWithFurnace & a_MinecartWithFurnace);
+	virtual void WriteMetadata(cMetadataWriter & a_Writer, const cPawn & a_Pawn);
+	virtual void WriteMetadata(cMetadataWriter & a_Writer, const cPickup & a_Pickup);
+	virtual void WriteMetadata(cMetadataWriter & a_Writer, const cPlayer & a_Player);
+	virtual void WriteMetadata(cMetadataWriter & a_Writer, const cSplashPotionEntity & a_SplashPotionEntity);
+	virtual void WriteMetadata(cMetadataWriter & a_Writer, const cTNTEntity & a_TNTEntity);
+	virtual void WriteMetadata(cMetadataWriter & a_Writer, const cWitherSkullEntity & a_WitherSkullEntity);
+	virtual void WriteMetadata(cMetadataWriter & a_Writer, const cBat & a_Bat);
+	virtual void WriteMetadata(cMetadataWriter & a_Writer, const cBlaze & a_Blaze);
+	virtual void WriteMetadata(cMetadataWriter & a_Writer, const cCreeper & a_Creeper);
+	virtual void WriteMetadata(cMetadataWriter & a_Writer, const cEnderDragon & a_EnderDragon);
+	virtual void WriteMetadata(cMetadataWriter & a_Writer, const cEnderman & a_Enderman);
+	virtual void WriteMetadata(cMetadataWriter & a_Writer, const cGhast & a_Ghast);
+	virtual void WriteMetadata(cMetadataWriter & a_Writer, const cGuardian & a_Guardian);
+	virtual void WriteMetadata(cMetadataWriter & a_Writer, const cHorse & a_Horse);
+	virtual void WriteMetadata(cMetadataWriter & a_Writer, const cIronGolem & a_IronGolem);
+	virtual void WriteMetadata(cMetadataWriter & a_Writer, const cMagmaCube & a_MagmaCube);
+	virtual void WriteMetadata(cMetadataWriter & a_Writer, const cPassiveMonster & a_PassiveMonster);
+	virtual void WriteMetadata(cMetadataWriter & a_Writer, const cPig & a_Pig);
+	virtual void WriteMetadata(cMetadataWriter & a_Writer, const cRabbit & a_Rabbit);
+	virtual void WriteMetadata(cMetadataWriter & a_Writer, const cSheep & a_Sheep);
+	virtual void WriteMetadata(cMetadataWriter & a_Writer, const cSkeleton & a_Skeleton);
+	virtual void WriteMetadata(cMetadataWriter & a_Writer, const cSlime & a_Slime);
+	virtual void WriteMetadata(cMetadataWriter & a_Writer, const cSnowGolem & a_SnowGolem);
+	virtual void WriteMetadata(cMetadataWriter & a_Writer, const cSpider & a_Spider);
+	virtual void WriteMetadata(cMetadataWriter & a_Writer, const cVillager & a_Villager);
+	virtual void WriteMetadata(cMetadataWriter & a_Writer, const cWitch & a_Witch);
+	virtual void WriteMetadata(cMetadataWriter & a_Writer, const cWither & a_Wither);
+	virtual void WriteMetadata(cMetadataWriter & a_Writer, const cWolf & a_Wolf);
+	virtual void WriteMetadata(cMetadataWriter & a_Writer, const cZombie & a_Zombie);
+	virtual void WriteMetadata(cMetadataWriter & a_Writer, const cZombiePigman & a_ZombiePigman);
 } ;
 
 
