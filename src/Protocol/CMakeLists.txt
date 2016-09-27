@@ -5,6 +5,7 @@ include_directories ("${PROJECT_SOURCE_DIR}/../")
 SET (SRCS
 	Authenticator.cpp
 	ChunkDataSerializer.cpp
+	EntityMetadata.cpp
 	MojangAPI.cpp
 	Packetizer.cpp
 	Protocol18x.cpp
