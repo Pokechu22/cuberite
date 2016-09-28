@@ -107,8 +107,7 @@ void cEntity::WriteMetadata(cMetadataWriter & a_Writer) const
 	a_Writer.SkipMeta();  // Is silent
 	if (a_Writer.m_ProtocolVersion >= PROTO_VERSION_1_10_0)
 	{
-		// If gravity is sufficiently different from the default, disable clientside gravity
-		a_Writer.WriteBool(std::abs(GetGravity() - DEFAULT_GRAVITY) > EPS);  // No gravity
+		a_Writer.SkipMeta();  // No gravity
 	}
 	// Subclasses add aditional metadata fields
 }
